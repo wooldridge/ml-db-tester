@@ -9,3 +9,5 @@ Then:
 `node createDB myDatabase`
 
 `node deleteDB myDatabase`
+
+More to come...
