@@ -5,6 +5,8 @@
   "author": "Mike Wooldridge",
   "license": "ISC",
   "dependencies": {
-    "marklogic": "git://github.com/wooldridge/node-client-api#5e8fe9d"
+    "bunyan": "^1.8.0",
+    "marklogic": "git://github.com/wooldridge/node-client-api#e2cf5aa",
+    "winston": "^2.2.0"
   }
 }

@@ -1,4 +1,5 @@
-var marklogic = require('marklogic');
+var marklogic = require('marklogic'),
+    winston = require('winston');
 
 var db = marklogic.createDatabaseClient({
   host: 'localhost',
@@ -7,6 +8,15 @@ var db = marklogic.createDatabaseClient({
   password: 'admin',
   authType: 'digest'
 });
+
+// Use Winston logger
+var winston_logger = new winston.Logger({
+  level: 'debug',
+  transports: [
+    new (winston.transports.Console)()
+  ]
+});
+db.setLogger(winston_logger);
 
 db.databases.delete(process.argv[2]).result(
   function(response) {
